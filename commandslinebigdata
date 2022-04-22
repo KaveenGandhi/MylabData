@@ -1,0 +1,34 @@
+commands: 
+1. $HADOOP_HOME/sbin/start-dfs.sh
+2. $HADOOP_HOME/sbin/start-yarn.sh
+3. sudo jps 
+4. hdfs dfs
+5. hdfs dfsadmin
+6. hdfs haadmin
+
+ mysql :
+sudo mysql -u root -p devsh_loudacre < devshloudacre.sql
+(import file from source to mysql database)
+
+1. mysql -u root -ppassword
+2. use databasename;
+3. source filename.sql; (to import file source to sql)
+
+sqoop:
+1. sqoop help
+2. sqoop list-databases --connect jdbc:mysql://ubh01 --username sqoop--password password (connect the database or list of database)
+3.sqoop list-tables --connect jdbc:mysql://ubh01/devsh_loudacre --username sqoop --password password
+4. sqoop import --connect jdbc:mysql://ubh01/devsh_loudacre --table basestations --fields-terminated-by ',' --username sqoop --password password
+5. hdfs dfs -ls basestations
+6. hdfs dfs -tail basestations/part-m-00000
+7. sqoop import-all-tables --connect jdbc:mysql://ubh01/devsh_loudacre --username sqoop --password password --warehouse-dir /ubh01/devsh_loudacre
+
+hive:
+1. hive
+2. show databases;
+3. use default;
+4. 
+
+
+
+8.
